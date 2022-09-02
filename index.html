@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+      integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>IP Address Tracker | By Sarthak Dubey</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        position: absolute;
+        margin-bottom: 0;
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="absolute -z-10">
+        <img
+          src="./images/pattern-bg.png"
+          class="w-full h-60 object-cover"
+          alt=""
+        />
+      </div>
+      <div class="p-8">
+        <div class="text-center text-3xl text-white text-bold mb-8">
+          IP Address Tracker
+        </div>
+        <form class="flex justify-center">
+          <input
+          id="ip_address"
+            type="text"
+            name=""
+            class="ip w-96 h-12 p-4 rounded-l-lg input"
+            placeholder="Search for any IP address or domain"
+            required
+          />
+          <button
+            id="submit"
+            type="submit"
+            class="submit w-12 h-12 bg-black rounded-r-lg flex justify-center items-center outline-0"
+          >
+            <img src="./images/icon-arrow.svg" alt="" />
+          </button>
+        </form>
+      </div>
+      <div
+        class="bg-white rounded-lg drop-shadow-2xl p-8 grid grid-cols-1 lg:grid-cols-4 mx-10 lg:mx-40"
+      >
+        <div class="lg:border-r lg:border-color-slate-400 mr-8">
+          <h2 class="text-sm font-bold text-slate-500 uppercase mb-3" >
+            IP Address
+          </h2>
+          <p class="text-xl font-bold max-w-[140px]" id="current_ip">192.212.212.212</p>
+        </div>
+        <div class="lg:border-r lg:border-color-slate-400 mr-8">
+          <h2 class="text-sm font-bold text-slate-500 uppercase mb-3">
+            Location
+          </h2>
+          <p class="text-xl font-bold max-w-[140px]" id="current_town">Brooklyn, NY 10001</p>
+        </div>
+        <div class="lg:border-r lg:border-color-slate-400 mr-8">
+          <h2 class="text-sm font-bold text-slate-500 uppercase mb-3">
+            Timezone
+          </h2>
+          <p class="text-xl font-bold" id="current_zone">192.212.212.212</p>
+        </div>
+        <div>
+          <h2 class="text-sm font-bold text-slate-500 uppercase mb-3">
+            ISP
+          </h2>
+          <p class="text-xl font-bold"id="current_isp">192.212.212.212</p>
+        </div>
+      </div>
+      <div id="display-map" class="map-container -mt-72 lg:-mt-40" style="z-index: -1000;"></div>
+    </section>
+    <script
+      src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+      integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+      crossorigin=""
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./track.js"></script>
+    <!-- 
+  IP Address Tracker
+
+  Search for any IP address or domain
+
+  IP Address
+  Location
+  Timezone
+    UTC 
+  ISP -->
+
+    <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Sarthak Dubey</a>.
+  </div>
+  </body>
+</html>

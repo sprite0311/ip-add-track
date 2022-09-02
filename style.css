@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    max-height: 100vh;
+    max-width: 100vw;
+    overflow: hidden;
+}
+.map-container {
+    background-color: black;
+    min-height: 79vh;
+}
